@@ -1,0 +1,3 @@
+<?php
+
+//$factories('App\User')
