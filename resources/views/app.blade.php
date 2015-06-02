@@ -20,7 +20,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle Navigation</span>
@@ -34,6 +34,11 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
+                    @if(Auth::check())
+                        <li><a href="{{URL::to('/admin/users')}}">Users</a></li>
+                        <li><a href="{{URL::to('/admin/tasks')}}">Tasks</a></li>
+                        <li><a href="{{URL::to('/admin/comments')}}">Comments</a></li>
+                    @endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -52,8 +57,13 @@
 			</div>
 		</div>
 	</nav>
-
-	@yield('content')
+    <section class="container">
+	    @yield('content')
+    </section>
+    <footer class="container">
+        <h3>Copy righr - Laravel</h3>
+    </footer>
+    @yield('scripts')
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

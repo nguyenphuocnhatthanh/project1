@@ -24,7 +24,7 @@ class HomeController extends Controller {
 	}
 
 	/**
-	 * Show the application dashboard to the user.
+	 * Show the application dashboard to the users.
 	 *
 	 * @return Response
 	 */

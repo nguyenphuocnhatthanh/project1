@@ -145,7 +145,10 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
         'Laracasts\Generators\GeneratorsServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider'
+        'Illuminate\Html\HtmlServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'App\Impl\RepositoryServiceProvider',
+        'App\Providers\ComposerServiceProvider',
 
 	],
 
