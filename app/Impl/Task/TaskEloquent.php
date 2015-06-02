@@ -9,6 +9,7 @@
 namespace App\Impl\Task;
 
 
+use App\Events\DeleteCommentsToDeleteTask;
 use App\Impl\AbstractRepository;
 use App\Task;
 
@@ -37,10 +38,28 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
         $task->name = $request->get('name');
         $task->user_id = \Auth::user()->id;
         $task->description = $request->get('description');
-        $task->status = 0;
+        $task->status = 1;
 
         return $task->save();
     }
+
+    /**
+     * @param $id
+     * @return bool
+     */
+    public function delete($id)
+    {
+        $task = $this->getByID($id);
+        $comments = $task->comments;
+        $bool = $task->delete();
+        if($bool) {
+            \Event::fire(new DeleteCommentsToDeleteTask($comments));
+            return $bool;
+        }
+
+        return false;
+    }
+
 
     /**
      * @param $search

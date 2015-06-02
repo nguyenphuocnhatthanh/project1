@@ -11,8 +11,8 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
+		'App\Events\DeleteCommentsToDeleteTask' => [
+			'App\Handlers\Events\DeletingCommentToTask',
 		],
 	];
 
@@ -26,7 +26,7 @@ class EventServiceProvider extends ServiceProvider {
 	{
 		parent::boot($events);
 
-		//
+		//\Event::listen()
 	}
 
 }

@@ -9,6 +9,8 @@
 namespace App\Impl;
 
 
+use App\Comment;
+use App\Impl\Comment\CommentEloquent;
 use App\Impl\Task\TaskEloquent;
 use App\Impl\User\UserEloquent;
 use App\Task;
@@ -29,6 +31,10 @@ class RepositoryServiceProvider extends ServiceProvider{
 
         $this->app->bind('App\Impl\Task\TaskInterface', function(){
             return new TaskEloquent(new Task());
+        });
+
+        $this->app->bind('App\Impl\Comment\CommentInterface', function(){
+            return new CommentEloquent(new Comment());
         });
     }
 

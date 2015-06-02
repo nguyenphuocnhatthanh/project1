@@ -38,16 +38,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
      * Route Task
      */
 
-
+    get('tasks', ['uses' => 'TasksController@index', 'middleware' => 'roles', 'roles' => ['member', 'manage']]);
     get('tasks/create', 'TasksController@getCreate');
     get('tasks/edit/{id}', 'TasksController@getEdit');
     get('tasks/delete/{id}', 'TasksController@delete');
+    get('tasks/detail/{id}', 'TasksController@detail');
 
     post('tasks/create', 'TasksController@postCreate');
     post('tasks/edit/{id}', 'TasksController@postEdit');
+
+    /**
+     * Route Comment
+     */
+
+    post('comments/create', 'CommentsController@create');
 });
 
-get('admin/tasks', ['uses' => 'Admin\TasksController@index', 'middleware' => 'roles', 'roles' => ['member', 'manage']]);
+
 
 get('test', function(){
     $tasks = \App\Task::all();
