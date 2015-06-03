@@ -22,6 +22,13 @@
         </div>
 
         <div class="form-group">
+            <label for="project" class="col-sm-2 control-label">Project</label>
+            <div class="col-sm-10">
+                {!! Form::select('project_id', $projects, $task->project->id, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Edit</button>
             </div>

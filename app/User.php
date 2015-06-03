@@ -46,6 +46,41 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function commentprojects(){
+        return $this->hasMany('App\Commentproject');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function projects(){
+        return $this->belongsToMany('App\Project');
+    }
+
+    /**
+     * @param $inputUsers
+     * @return array
+     */
+    public static function prepareForUsersSave($inputUsers){
+        $users = self::all()->toArray();
+        $prepareUser = [];
+
+        foreach($inputUsers as $key => $user_id){
+
+            array_walk($users,function($value) use ($key, $user_id, &$prepareUser){
+                if((int)$value['id'] == (int)$user_id) {
+                    $prepareUser[] = $user_id;
+
+                }
+            });
+        }
+
+        return $prepareUser;
+    }
+    
+    /**
      * @param $roles
      * @return bool
      */

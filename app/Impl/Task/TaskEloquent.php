@@ -38,6 +38,7 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
         $task->name = $request->get('name');
         $task->user_id = \Auth::user()->id;
         $task->description = $request->get('description');
+        $task->project_id = $request->get('project_id');
         $task->status = 1;
 
         return $task->save();

@@ -7,7 +7,7 @@
 	<title>Laravel</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -38,6 +38,7 @@
                     @if(Auth::check())
                         <li><a href="{{URL::to('/admin/users')}}">Users</a></li>
                         <li><a href="{{URL::to('/admin/tasks')}}">Tasks</a></li>
+                        <li><a href="{{URL::to('/admin/projects')}}">Projects</a></li>
                     @endif
 				</ul>
 

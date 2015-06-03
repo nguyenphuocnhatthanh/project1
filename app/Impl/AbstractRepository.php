@@ -7,8 +7,6 @@
  */
 
 namespace App\Impl;
-
-
 abstract class AbstractRepository {
     /**
      * @return mixed
@@ -16,7 +14,6 @@ abstract class AbstractRepository {
     public function all(){
         return $this->model->all();
     }
-
     /**
      * @param $id
      * @return mixed
@@ -24,7 +21,6 @@ abstract class AbstractRepository {
     public function getByID($id){
         return $this->model->findOrFail($id);
     }
-
     /**
      * @param $adj
      * @param array $params
@@ -33,7 +29,6 @@ abstract class AbstractRepository {
     public function paginate($adj, array $params = []){
         return $this->model->query()->paginate($adj);
     }
-
     /**
      * @param array $with
      * @return mixed
@@ -41,7 +36,6 @@ abstract class AbstractRepository {
     public function make(array $with = []){
         return $this->model->with($with);
     }
-
     /**
      * @param $id
      * @return mixed

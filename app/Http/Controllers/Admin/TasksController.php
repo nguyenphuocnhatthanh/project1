@@ -77,7 +77,7 @@ class TasksController extends Controller {
      */
     public function getEdit($id){
         $task = $this->task->getByID($id);
-        if(\Auth::user()->id == $task->user->id)
+        if(\Auth::user()->id == $task->user->id || \Auth::user()->role == 'manage')
             return view('admin.tasks.edit', compact('task'));
         return redirect('/admin/tasks');
     }

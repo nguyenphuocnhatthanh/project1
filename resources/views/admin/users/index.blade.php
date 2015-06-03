@@ -38,7 +38,7 @@
             </tbody>
         </table>
         @if($users->lastPage() > 1)
-            {!! $users->appends(Request::query())->render() !!}
+            {!! $users->render() !!}
         @endif
 
     </div>

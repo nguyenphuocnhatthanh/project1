@@ -26,6 +26,7 @@ class CommentsController extends Controller {
         if($this->comment->save($request, \Auth::user()->id)) {
             return redirect('/admin/tasks/detail/'.$request->get('task_id'));
         }
+        return redirect()->back();
     }
 
     /**

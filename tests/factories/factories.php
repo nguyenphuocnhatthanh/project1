@@ -14,4 +14,7 @@ $factory('App\Task', [
     'status' => rand(0,1)
 ]);
 
-
+$factory('App\Project', [
+    'name'  => $faker->name,
+    'description' => $faker->text()
+]);

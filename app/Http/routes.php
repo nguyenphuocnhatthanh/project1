@@ -57,18 +57,36 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     post('comments/create', 'CommentsController@create');
     post('comments/edit/{id}', 'CommentsController@postEdit');
 
+    /**
+     * Route Project
+     */
 
+    get('projects', 'ProjectsController@index');
+    get('projects/create', 'ProjectsController@getCreate');
+    get('projects/edit/{id}', 'ProjectsController@getEdit');
+    get('projects/delete/{id}', 'ProjectsController@delete');
+    get('projects/detail/{id}', 'ProjectsController@detail');
+
+    post('projects/create', 'ProjectsController@postCreate');
+    post('projects/edit/{id}', 'ProjectsController@postEdit');
+
+    /**
+     * Route CommentProject
+     */
+
+    get('commentprojects/delete/{id}', 'CommentProjectsController@delete');
+    get('commentprojects/edit/{id}', 'CommentProjectsController@edit');
+
+    post('commentprojects/create', 'CommentProjectsController@create');
+    post('commentprojects/edit/{id}', 'CommentProjectsController@postEdit');
 });
 
 
 
 get('test', function(){
-    $tasks = \App\Task::all();
-    $username = [];
-    foreach($tasks as $task){
-        $username[] = $task->user->name;
-    }
-    dd($username);
+    $array = ['foo', 'aa','test'];
+    list($key, $value) = $array;
+    dd($key, $value);
 });
 
 

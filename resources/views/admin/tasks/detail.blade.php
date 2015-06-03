@@ -7,6 +7,7 @@
         {!! $task->description !!}
     </h5>
 
+    Project:{!! Form::select('project_id', $projects, $task->project->id , ['class' => 'form-control']) !!}
     <h5>Comment:</h5>
     <ul>
 
@@ -33,10 +34,8 @@
     </form>
     <script>
         $(document).ready(function(){
-            var checkAjax = false;
+            var checkAjax = false
             $(document).off('click', '.editComment').on('click','.editComment',function(e){
-                if(checkAjax) return;
-                checkAjax = true;
                 $('.text-comment').remove();
                 e.preventDefault();
                 var url = $(this).attr('href').split('/');
@@ -49,8 +48,6 @@
                         $('#text'+id).html(result);
                     }
                 });
-            }).always(function(){
-                checkAjax = false;
             });
             $(document).on('keyup', '.text-comment', function(evt){
                 if(evt.keyCode == 27){

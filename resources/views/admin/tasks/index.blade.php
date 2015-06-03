@@ -23,18 +23,21 @@
              <th>Task</th>
              <th>Username</th>
              <th>Description</th>
+             <th>Project name</th>
              {{--@if(Auth::user()->role == 'manage' )--}}
                 {{--<th>Status</th>--}}
                 <th>Action</th>
              {{--@endif--}}
              </thead>
              <tbody>
+
             @foreach($tasks as $task)
                 <tr>
                     <td>{{$task->id}}</td>
                     <td><a href="{{URL::to('/admin/tasks/detail/'.$task->id)}}">{{$task->name}}</a></td>
                     <td>{{$task->user->name}}</td>
                     <td>{{$task->description}}</td>
+                    <td>{{$task->project->name}}</td>
                     @if(Auth::user()->role == 'manage' || Auth::user()->id == $task->user->id)
                        {{-- <td>{{$task->status}}</td>--}}
                         <td>{!! link_to_asset('/admin/tasks/edit/'.$task->id, 'Edit') !!} || {!! link_to_asset('/admin/tasks/delete/'.$task->id, 'Delete') !!}</td>

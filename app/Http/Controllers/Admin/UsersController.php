@@ -29,6 +29,7 @@ class UsersController extends Controller {
         if($request->has('search'))
             $users = $this->user->search($request->get('search'), 10);
         $users->setPath('/public/admin/users');
+        $users->appends($request->query());
         return view('admin.users.index', compact('users'));
     }
 
