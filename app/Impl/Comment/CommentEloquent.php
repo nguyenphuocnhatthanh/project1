@@ -29,7 +29,7 @@ class CommentEloquent extends AbstractRepository implements CommentInterface{
      */
     public function save($request, $userID)
     {
-        if($request->has('user_id') && $request->get('user_id') == $userID) {
+        if($request->has('user_id') && $request->get('user_id') == $userID && $request->has('id')) {
             $comment = $this->getByID($request->get('id'));
             $comment->body = $request->get('body');
 

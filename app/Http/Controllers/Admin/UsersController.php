@@ -65,6 +65,10 @@ class UsersController extends Controller {
         return view('admin.users.edit', compact('user'));
     }
 
+    /**
+     * @param Requests\FormUsersRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postEdit(Requests\FormUsersRequest $request){
         if($this->user->save($request)) {
             \Session::flash('statusAction' , 'success');

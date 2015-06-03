@@ -17,6 +17,7 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -37,7 +38,6 @@
                     @if(Auth::check())
                         <li><a href="{{URL::to('/admin/users')}}">Users</a></li>
                         <li><a href="{{URL::to('/admin/tasks')}}">Tasks</a></li>
-                        <li><a href="{{URL::to('/admin/comments')}}">Comments</a></li>
                     @endif
 				</ul>
 

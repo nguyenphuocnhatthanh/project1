@@ -21,6 +21,10 @@ class TasksController extends Controller {
         $this->task = $task;
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
     public function index(Request $request){
         $tasks = $this->task->paginate(10);
         if($request->has('search'))
@@ -30,9 +34,13 @@ class TasksController extends Controller {
         return view('admin.tasks.index', compact('tasks'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\View\View
+     */
     public function detail($id){
         $task = $this->task->getByID($id);
-
+        \Session::flash('task_id', $id);
         return view('admin.tasks.detail', compact('task'));
     }
 
@@ -40,10 +48,17 @@ class TasksController extends Controller {
 
     }*/
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function getCreate(){
         return view('admin.tasks.create');
     }
 
+    /**
+     * @param Requests\FormTasksRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postCreate(Requests\FormTasksRequest $request){
         if($this->task->save($request)) {
             \Session::flash('statusAction' , 'success');
@@ -56,6 +71,10 @@ class TasksController extends Controller {
         return redirect()->back();
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function getEdit($id){
         $task = $this->task->getByID($id);
         if(\Auth::user()->id == $task->user->id)
@@ -63,6 +82,10 @@ class TasksController extends Controller {
         return redirect('/admin/tasks');
     }
 
+    /**
+     * @param Requests\FormTasksRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postEdit(Requests\FormTasksRequest $request){
         if($this->task->save($request)) {
             \Session::flash('statusAction' , 'success');
@@ -75,6 +98,10 @@ class TasksController extends Controller {
         return redirect()->back();
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete($id){
 
         $task = $this->task->getByID($id);
@@ -86,10 +113,10 @@ class TasksController extends Controller {
                 return redirect('/admin/tasks');
             }
 
-            dd('loi');
+            return redirect('/admin/tasks');
         }
 
-        dd('acbd');
+        return redirect('/admin/tasks');
     }
 
 }

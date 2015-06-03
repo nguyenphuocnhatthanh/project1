@@ -51,7 +51,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
      * Route Comment
      */
 
+    get('comments/delete/{id}', 'CommentsController@delete');
+    get('comments/edit/{id}', 'CommentsController@edit');
+
     post('comments/create', 'CommentsController@create');
+    post('comments/edit/{id}', 'CommentsController@postEdit');
+
+
 });
 
 
