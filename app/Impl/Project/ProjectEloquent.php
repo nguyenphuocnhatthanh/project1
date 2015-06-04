@@ -10,7 +10,7 @@ namespace App\Impl\Project;
 
 
 use App\Commentproject;
-use App\Events\DeleteComentsToDeleteProject;
+use App\Events\DeletingDataMapProject;
 use App\Impl\AbstractRepository;
 use App\Project;
 use App\User;
@@ -48,13 +48,23 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
     }
 
     /**
+     * @param $adj
+     * @param array $params
+     * @return mixed
+     */
+    public function paginate($adj, array $params = [])
+    {
+        return $this->make(['users', 'tasks'])->paginate($adj);
+    }
+
+    /**
      * @param $search
      * @param int $adj
      * @return mixed
      */
     public function search($search, $adj = 10)
     {
-        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->paginate($adj);
+        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->with(['users', 'tasks'])->paginate($adj);
     }
 
     /**
@@ -64,10 +74,15 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
     public function delete($id )
     {
         $project = $this->getByID($id);
+
         $commentprojects = $project->commentprojects;
-        $bool = $project->users()->detach();
-        $this->delete($id);
-        if($bool) \Event::fire(new DeleteComentsWithTasksToDeleteProject($commentprojects));
+        $tasks = $project->tasks;
+        $taskComments = $project->tasks()->with(['comments'])->get();
+        $bool = parent::delete($id);
+        $project->users()->detach();
+
+        if($bool) event(new DeletingDataMapProject($commentprojects, $tasks, $taskComments));
+
         return $bool;
     }
 

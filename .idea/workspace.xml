@@ -2,37 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="394d3ebd-06ef-4788-85fa-b9086137d639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Impl/CommentProject/CommentProjectEloquent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Impl/CommentProject/CommentProjectInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Impl/Project/ProjectInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/projects/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/commentprojects/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/projects/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/projects/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/select2.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/select2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mô hình ERD.pdf" afterPath="$PROJECT_DIR$/Mô hình ERD.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Impl/AbstractRepository.php" afterPath="$PROJECT_DIR$/app/Impl/AbstractRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CommentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CommentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Impl/RepositoryServiceProvider.php" afterPath="$PROJECT_DIR$/app/Impl/RepositoryServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/ViewComposer/SelectComposer.php" afterPath="$PROJECT_DIR$/app/Http/ViewComposer/SelectComposer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Task.php" afterPath="$PROJECT_DIR$/app/Task.php" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\project1\app\Events\DeleteComentsToDeleteProject.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\project1\app\Handlers\Events\DeletingCommentToProjects.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Events/DeleteCommentsToDeleteTask.php" afterPath="$PROJECT_DIR$/app/Events/DeleteCommentsToDeleteTask.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php" afterPath="$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php" afterPath="$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/tasks/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/tasks/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/tasks/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/tasks/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/tasks/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/tasks/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/factories/factories.php" afterPath="$PROJECT_DIR$/tests/factories/factories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/tasks/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/tasks/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="project1.iws" />
@@ -58,65 +40,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DeleteCommentsToDeleteTask.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Events/DeleteCommentsToDeleteTask.php">
+      <file leaf-file-name="TasksController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="1764">
-              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteComentsToDeleteProject.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Events/DeleteComentsToDeleteProject.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6296296" vertical-offset="49" max-vertical-offset="882">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="34" />
+            <state vertical-scroll-proportion="-13.222222" vertical-offset="315" max-vertical-offset="2793">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
-                <element signature="e#29#52#0#PHP" expanded="true" />
+                <element signature="e#45#87#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventServiceProvider.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45783132" vertical-offset="28" max-vertical-offset="777">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeletingCommentToProjects.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Handlers/Events/DeletingCommentToProjects.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.2222223" vertical-offset="0" max-vertical-offset="798">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="31" />
-              <folding>
-                <element signature="e#38#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentProjectsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CommentProjectsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.851852" vertical-offset="994" max-vertical-offset="1659">
-              <caret line="74" column="75" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.6385542" vertical-offset="196" max-vertical-offset="2163">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -125,40 +65,8 @@
       <file leaf-file-name="TaskEloquent.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6296296" vertical-offset="595" max-vertical-offset="1512">
-              <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectEloquent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.259259" vertical-offset="986" max-vertical-offset="1575">
-              <caret line="69" column="72" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="72" />
-              <folding>
-                <element signature="e#119#142#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Project.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4074073" vertical-offset="190" max-vertical-offset="924">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.296296" vertical-offset="1288" max-vertical-offset="1890">
-              <caret line="86" column="34" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="34" />
+            <state vertical-scroll-proportion="-12.962963" vertical-offset="994" max-vertical-offset="1659">
+              <caret line="71" column="100" selection-start-line="71" selection-start-column="100" selection-end-line="71" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -172,15 +80,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Handlers/Events/DeletingCommentToTask.php" />
-        <option value="$PROJECT_DIR$/app/Impl/Comment/CommentEloquent.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/comments/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Impl/Repository.php" />
         <option value="$PROJECT_DIR$/app/Impl/User/UserInterface.php" />
         <option value="$PROJECT_DIR$/app/Impl/User/UserEloquent.php" />
         <option value="$PROJECT_DIR$/app/Impl/AbstractRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_06_03_074930_create_projects_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_06_03_075237_create_product_user_pivot_table.php" />
@@ -201,11 +104,9 @@
         <option value="$PROJECT_DIR$/app/Project.php" />
         <option value="$PROJECT_DIR$/app/Http/ViewComposer/SelectComposer.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tasks/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tasks/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tasks/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tasks/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/projects/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -216,13 +117,20 @@
         <option value="$PROJECT_DIR$/resources/views/admin/commentprojects/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Handlers/Events/DeletingCommentToProjects.php" />
         <option value="$PROJECT_DIR$/app/Events/DeleteComentsToDeleteProject.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php" />
-        <option value="$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php" />
         <option value="$PROJECT_DIR$/app/Handlers/Events/DeletingCommentWithTasksToProjects.php" />
         <option value="$PROJECT_DIR$/app/Handlers/Events/DeleteComentsWithTasksToDeleteProject.php" />
         <option value="$PROJECT_DIR$/app/Events/DeleteComentsWithTasksToDeleteProject.php" />
+        <option value="$PROJECT_DIR$/app/Events/DeleteCommentsToDeleteTask.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" />
+        <option value="$PROJECT_DIR$/app/Handlers/Events/DeleteHandlerProject.php" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Events/DeletingDataMapProject.php" />
+        <option value="$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php" />
+        <option value="$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
       </list>
     </option>
   </component>
@@ -264,7 +172,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -657,12 +564,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="ProjectE&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Project/ProjectEloquent.php&#10;projectsCon&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;TaskCo&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;Reposi&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/RepositoryServiceProvider.php&#10;Com&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/CommentProject/CommentProjectEloquent.php&#10;routes&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/routes.php&#10;ProjectsCon&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;TaskCont&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;taskE&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Task/TaskEloquent.php&#10;FormCo&#9;null&#9;null&#10;Project&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Project.php&#10;ProjectCont&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;FormP&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Requests/FormProjectsRequest.php&#10;index&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/projects/index.blade.php&#10;Form&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Requests/FormProjectsRequest.php&#10;App\U&#9;null&#9;null&#10;app&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;factories&#9;FILE&#9;file://D:/OpenServer/domains/project1/tests/factories/factories.php&#10;Leng&#9;null&#9;null&#10;FormRequ&#9;null&#9;null&#10;app.b&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;Task&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Task/TaskEloquent.php&#10;Repo&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/RepositoryServiceProvider.php&#10;FormCom&#9;null&#9;null&#10;Comm&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/CommentsController.php&#10;deta&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/tasks/detail.blade.php&#10;Auth&#9;null&#9;null&#10;Use&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/UsersController.php&#10;UserC&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/UsersController.php&#10;User&#9;null&#9;null&#10;Tas&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;pagina&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/users/pagination.blade.php&#10;route&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/routes.php&#10;Compos&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Providers/ComposerServiceProvider.php&#10;c&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/users/create.blade.php&#10;UserInt&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/User/UserInterface.php&#10;FormUser&#9;null&#9;null&#10;app.&#9;FILE&#9;file://D:/OpenServer/domains/project1/config/app.php&#10;Ab&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/AbstractRepository.php&#10;app.blad&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;compo&#9;FILE&#9;file://D:/OpenServer/domains/project1/composer.json" />
+    <property name="SearchEverywhereHistoryKey" value="UsersCon&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/UsersController.php&#10;Task&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Task/TaskEloquent.php&#10;Tasks&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;detail&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/projects/detail.blade.php&#10;Pro&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;Proje&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;ProjectElo&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Project/ProjectEloquent.php&#10;proj&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;app.&#9;FILE&#9;file://D:/OpenServer/domains/project1/config/app.php&#10;ProjectE&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Project/ProjectEloquent.php&#10;projectsCon&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;TaskCo&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;Reposi&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/RepositoryServiceProvider.php&#10;Com&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/CommentProject/CommentProjectEloquent.php&#10;routes&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/routes.php&#10;ProjectsCon&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;TaskCont&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;taskE&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/Task/TaskEloquent.php&#10;FormCo&#9;null&#9;null&#10;Project&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Project.php&#10;ProjectCont&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/ProjectsController.php&#10;FormP&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Requests/FormProjectsRequest.php&#10;index&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/projects/index.blade.php&#10;Form&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Requests/FormProjectsRequest.php&#10;App\U&#9;null&#9;null&#10;app&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;factories&#9;FILE&#9;file://D:/OpenServer/domains/project1/tests/factories/factories.php&#10;Leng&#9;null&#9;null&#10;FormRequ&#9;null&#9;null&#10;app.b&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;Repo&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/RepositoryServiceProvider.php&#10;FormCom&#9;null&#9;null&#10;Comm&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/CommentsController.php&#10;deta&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/tasks/detail.blade.php&#10;Auth&#9;null&#9;null&#10;Use&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/UsersController.php&#10;UserC&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/UsersController.php&#10;User&#9;null&#9;null&#10;Tas&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/Controllers/Admin/TasksController.php&#10;pagina&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/users/pagination.blade.php&#10;route&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Http/routes.php&#10;Compos&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Providers/ComposerServiceProvider.php&#10;c&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/admin/users/create.blade.php&#10;UserInt&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/User/UserInterface.php&#10;FormUser&#9;null&#9;null&#10;Ab&#9;FILE&#9;file://D:/OpenServer/domains/project1/app/Impl/AbstractRepository.php&#10;app.blad&#9;FILE&#9;file://D:/OpenServer/domains/project1/resources/views/app.blade.php&#10;compo&#9;FILE&#9;file://D:/OpenServer/domains/project1/composer.json" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -698,6 +606,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -705,9 +616,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -726,8 +634,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -742,21 +650,21 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -768,9 +676,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18960468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -796,22 +704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/factories/factories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="546">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ProjectsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2222223" vertical-offset="0" max-vertical-offset="357">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/TasksTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
@@ -824,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.444445" vertical-offset="0" max-vertical-offset="546">
           <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.925926" vertical-offset="455" max-vertical-offset="1050">
           <caret line="37" column="20" selection-start-line="27" selection-start-column="12" selection-end-line="37" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.555555" vertical-offset="42" max-vertical-offset="903">
           <caret line="13" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,15 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="147">
           <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0722891" vertical-offset="1330" max-vertical-offset="2163">
-          <caret line="97" column="34" selection-start-line="95" selection-start-column="8" selection-end-line="97" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8518518" vertical-offset="20966" max-vertical-offset="25914">
           <caret line="1000" column="20" selection-start-line="1000" selection-start-column="20" selection-end-line="1000" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8888888" vertical-offset="63" max-vertical-offset="1659">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.740741" vertical-offset="232" max-vertical-offset="861">
           <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.185185" vertical-offset="28" max-vertical-offset="798">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3253012" vertical-offset="0" max-vertical-offset="581">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6901893" vertical-offset="376" max-vertical-offset="987">
           <caret line="43" column="9" selection-start-line="31" selection-start-column="8" selection-end-line="43" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60240966" vertical-offset="154" max-vertical-offset="735">
           <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274648" vertical-offset="0" max-vertical-offset="1617">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27710843" vertical-offset="322" max-vertical-offset="903">
           <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="28" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6302817" vertical-offset="188" max-vertical-offset="903">
           <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70422536" vertical-offset="503" max-vertical-offset="1239">
           <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5915493" vertical-offset="147" max-vertical-offset="1029">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,7 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60240966" vertical-offset="448" max-vertical-offset="1029">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="43" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,9 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.0" vertical-offset="378" max-vertical-offset="1113">
           <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-          <folding>
-            <marker date="1433327235707" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,9 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.185185" vertical-offset="1135" max-vertical-offset="1953">
           <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
-          <folding>
-            <element signature="e#7#392#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,27 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2857144" vertical-offset="572" max-vertical-offset="2562">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CommentProjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.851852" vertical-offset="994" max-vertical-offset="1659">
-          <caret line="74" column="75" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CommentsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.0" vertical-offset="378" max-vertical-offset="1449">
           <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.2222223" vertical-offset="0" max-vertical-offset="294">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,84 +978,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.11111" vertical-offset="0" max-vertical-offset="714">
           <caret line="25" column="53" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6296296" vertical-offset="595" max-vertical-offset="1512">
-          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4074073" vertical-offset="190" max-vertical-offset="924">
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="924">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.296296" vertical-offset="1288" max-vertical-offset="1890">
-          <caret line="86" column="34" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="34" />
+        <state vertical-scroll-proportion="-13.740741" vertical-offset="3850" max-vertical-offset="4452">
+          <caret line="201" column="49" selection-start-line="201" selection-start-column="49" selection-end-line="201" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Impl/AbstractRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="1764">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        <state vertical-scroll-proportion="-5.148148" vertical-offset="344" max-vertical-offset="987">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CommentProjectsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4939759" vertical-offset="0" max-vertical-offset="1659">
+          <caret line="74" column="75" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Handlers/Events/DeleteHandlerProject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.084337346" vertical-offset="133" max-vertical-offset="714">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14457831" vertical-offset="252" max-vertical-offset="840">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Events/DeleteCommentsToDeleteTask.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="840">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4698795" vertical-offset="252" max-vertical-offset="861">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Impl/Project/ProjectEloquent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.259259" vertical-offset="986" max-vertical-offset="1575">
-          <caret line="69" column="72" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.96385545" vertical-offset="994" max-vertical-offset="1890">
+          <caret line="79" column="69" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
           <folding>
             <element signature="e#119#142#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Handlers/Events/DeletingCommentToProjects.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2222223" vertical-offset="0" max-vertical-offset="798">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.36144578" vertical-offset="252" max-vertical-offset="1953">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/projects/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034423407" vertical-offset="505" max-vertical-offset="1932">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/DeletingDataMapProject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7108434" vertical-offset="910" max-vertical-offset="1554">
+          <caret line="63" column="57" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
           <folding>
-            <element signature="e#38#82#0#PHP" expanded="true" />
+            <element signature="e#29#45#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/DeleteComentsToDeleteProject.php">
+    <entry file="file://$PROJECT_DIR$/app/Impl/Task/TaskEloquent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6296296" vertical-offset="49" max-vertical-offset="882">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="34" />
+        <state vertical-scroll-proportion="-12.962963" vertical-offset="994" max-vertical-offset="1659">
+          <caret line="71" column="100" selection-start-line="71" selection-start-column="100" selection-end-line="71" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TasksController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.222222" vertical-offset="315" max-vertical-offset="2793">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding>
-            <element signature="e#29#52#0#PHP" expanded="true" />
+            <element signature="e#45#87#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45783132" vertical-offset="28" max-vertical-offset="777">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.6385542" vertical-offset="196" max-vertical-offset="2163">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding />
         </state>
       </provider>

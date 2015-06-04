@@ -17,17 +17,25 @@
     @foreach($project->commentprojects as $commentprojects)
 
             <li>{{$commentprojects->user->name}}: <span>{{($commentprojects->content)}}</span>
+
                 @if($commentprojects->user->id == Auth::user()->id)
                     <?php $checkDisplayComment = true; ?>
                     <a href="{{URL::to('/admin/commentprojects/edit/'.$commentprojects->id)}}" class="editComment">Edit</a> |
                     <a href="{{URL::to('/admin/commentprojects/delete/'.$commentprojects->id)}}">Delete</a>
                 @endif
+
                 <div id="text{{$commentprojects->id}}" class="edit-comment"></div>
+
             </li>
 
     @endforeach
 
     </ul>
+    @foreach($project->users as $user)
+        @if($user->id == Auth::user()->id)
+            <?php $checkDisplayComment = true; ?>
+        @endif
+    @endforeach
     @if($checkDisplayComment)
     <form action="{{URL::to('/admin/commentprojects/create')}}" method="post">
         @include('partials.error')

@@ -25,7 +25,8 @@ class DeleteCommentsToDeleteTask extends Event {
         $this->comments = $comments;
     }
 
-    public function deletingComment(){
+    public function deletingComment()
+    {
         $ids = [];
         foreach($this->comments as $comment){
             $ids[] = $comment->id;

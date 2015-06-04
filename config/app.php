@@ -149,7 +149,7 @@ return [
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'App\Impl\RepositoryServiceProvider',
         'App\Providers\ComposerServiceProvider',
-
+        'Barryvdh\Debugbar\ServiceProvider',
 	],
 
 	/*
@@ -199,6 +199,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'      => 'Illuminate\Html\FormFacade',
         'HTML'      => 'Illuminate\Html\HtmlFacade',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	],
 

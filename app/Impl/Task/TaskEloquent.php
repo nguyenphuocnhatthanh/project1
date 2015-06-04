@@ -69,6 +69,13 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
      */
     public function search($search, $adj = 10)
     {
-        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->paginate($adj);
+        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->with(['user', 'project'])->paginate($adj);
     }
+
+    public function paginate($adj, array $params = [])
+    {
+        return $this->make(['user', 'project'])->paginate($adj);
+    }
+
+
 }

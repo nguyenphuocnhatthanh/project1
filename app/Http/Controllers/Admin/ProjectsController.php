@@ -20,11 +20,14 @@ class ProjectsController extends Controller {
     }
 
     public function index(Request $request){
-        $projects = $this->project->paginate(10);
+
 
         if($request->has('search')) {
             $projects = $this->project->search($request->get('search'));
+        }else{
+            $projects = $this->project->paginate(10);
         }
+
         $projects->setPath('/public/admin/projects');
         $projects->appends($request->query());
 

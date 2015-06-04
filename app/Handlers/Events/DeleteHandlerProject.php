@@ -1,12 +1,11 @@
 <?php namespace App\Handlers\Events;
 
-use App\Events\DeleteComentsToDeleteProject;
-use App\Events\DeleteComentToDeleteProject;
+use App\Events\DeletingDataMapProject;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class DeletingCommentToProjects {
+class DeleteHandlerProject {
 
 	/**
 	 * Create the event handler.
@@ -21,12 +20,12 @@ class DeletingCommentToProjects {
 	/**
 	 * Handle the event.
 	 *
-	 * @param  DeleteComentToDeleteProject  $event
+	 * @param  DeletingDataMapProject  $event
 	 * @return void
 	 */
-	public function handle(DeleteComentsToDeleteProject $event)
+	public function handle(DeletingDataMapProject $event)
 	{
-		$event->deletingComment();
+		$event->deleteDataMapProject();
 	}
 
 }

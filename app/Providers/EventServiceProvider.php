@@ -14,6 +14,9 @@ class EventServiceProvider extends ServiceProvider {
 		'App\Events\DeleteCommentsToDeleteTask' => [
 			'App\Handlers\Events\DeletingCommentToTask',
 		],
+        'App\Events\DeletingDataMapProject' => [
+            'App\Handlers\Events\DeleteHandlerProject'
+        ],
 	];
 
 	/**

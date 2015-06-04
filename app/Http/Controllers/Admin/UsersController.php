@@ -23,13 +23,13 @@ class UsersController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index(Request $request){
-        $users = $this->user->paginate(10);
-
-
         if($request->has('search'))
             $users = $this->user->search($request->get('search'), 10);
+        else $users = $this->user->paginate(10);
+
         $users->setPath('/public/admin/users');
         $users->appends($request->query());
+        
         return view('admin.users.index', compact('users'));
     }
 
