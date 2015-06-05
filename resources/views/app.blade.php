@@ -39,6 +39,7 @@
                         <li><a href="{{URL::to('/admin/users')}}">Users</a></li>
                         <li><a href="{{URL::to('/admin/tasks')}}">Tasks</a></li>
                         <li><a href="{{URL::to('/admin/projects')}}">Projects</a></li>
+                        <li><a href="{{URL::to('/admin/modules')}}">Modules</a></li>
                     @endif
 				</ul>
 

@@ -7,21 +7,21 @@ class Task extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comments(){
+  /*  public function comments() {
         return $this->hasMany('App\Comment');
-	}
+    }*/
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(){
+    public function user() {
         return $this->belongsTo('App\User');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project(){
+    public function project() {
         return $this->belongsTo('App\Project');
     }
 }

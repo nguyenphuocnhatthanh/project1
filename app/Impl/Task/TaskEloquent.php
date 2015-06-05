@@ -11,15 +11,16 @@ namespace App\Impl\Task;
 
 use App\Events\DeleteCommentsToDeleteTask;
 use App\Impl\AbstractRepository;
+use App\Impl\Comment\CommentInterface;
 use App\Task;
 
-class TaskEloquent extends AbstractRepository implements TaskInterface{
+class TaskEloquent extends AbstractRepository implements TaskInterface {
     /**
      * @var Task
      */
     protected $model;
 
-    public function __construct(Task $task){
+    public function __construct(Task $task) {
         $this->model = $task;
     }
 
@@ -27,11 +28,10 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
      * @param $request
      * @return mixed
      */
-    public function save($request)
-    {
-        if($request->has('id')){
+    public function save($request) {
+        if ($request->has('id')) {
             $task = $this->getByID($request->get('id'));
-        }else{
+        } else {
             $task = new $this->model;
         }
 
@@ -48,17 +48,17 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
      * @param $id
      * @return bool
      */
-    public function delete($id)
-    {
+    public function delete($id ) {
         $task = $this->getByID($id);
-        $comments = $task->comments;
+
+
         $bool = $task->delete();
-        if($bool) {
-            \Event::fire(new DeleteCommentsToDeleteTask($comments));
-            return $bool;
+        if ($bool) {
+             return \Event::fire(new DeleteCommentsToDeleteTask($id));
+
         }
 
-        return false;
+        return $bool;
     }
 
 
@@ -67,14 +67,20 @@ class TaskEloquent extends AbstractRepository implements TaskInterface{
      * @param $adj
      * @return mixed
      */
-    public function search($search, $adj = 10)
-    {
-        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->with(['user', 'project'])->paginate($adj);
+    public function search($search, $adj = 10) {
+        return $this->model->query()->where('name', 'LIKE', '%' . $search . '%')->with(['user', 'project'])->paginate($adj);
     }
 
-    public function paginate($adj, array $params = [])
-    {
+    public function paginate($adj, array $params = []) {
         return $this->make(['user', 'project'])->paginate($adj);
+    }
+
+    /**
+     * @param $ids
+     * @return mixed
+     */
+    public function deleteMultiRecord($ids) {
+        return $this->model->query()->whereIn('id', $ids)->delete();
     }
 
 

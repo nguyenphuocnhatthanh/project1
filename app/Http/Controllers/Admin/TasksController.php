@@ -4,36 +4,39 @@ use App\Events\DeleteCommentsToDeleteTask;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Impl\Comment\CommentInterface;
 use App\Impl\Task\TaskInterface;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller {
 
-
     /**
      * @var TaskInterface
      */
     private $task;
+    /**
+     * @var CommentInterface
+     */
+    private $comment;
 
-    public function __construct(TaskInterface $task){
+    public function __construct(TaskInterface $task, CommentInterface $comment) {
 
         $this->task = $task;
+        $this->comment = $comment;
     }
 
     /**
      * @param Request $request
      * @return \Illuminate\View\View
      */
-    public function index(Request $request){
+    public function index(Request $request) {
 
-        if($request->has('search')){
+        if ($request->has('search')) {
             $tasks = $this->task->search($request->get('search'));
-        } else{
+        } else {
             $tasks = $this->task->paginate(10);
-            //$tasks = Task::with(['user', 'project'])->paginate(10);
         }
 
-        //dd($tasks);
         $tasks->setPath('/public/admin/tasks');
 
         return view('admin.tasks.index', compact('tasks'));
@@ -43,20 +46,22 @@ class TasksController extends Controller {
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function detail($id){
+    public function detail($id) {
         $task = $this->task->getByID($id);
+        // $comments = $this->comment->comments(2, $id);
+        $comments = $this->comment->allCommnentToModule(2, $id);
         \Session::flash('task_id', $id);
-        return view('admin.tasks.detail', compact('task'));
+        \Session::flash('module_id', 2);
+        \Session::flash('record_id', $id);
+
+        return view('admin.tasks.detail', compact('task', 'comments'));
     }
 
-    /*public function postDetail(Requests\FormCommentsRequest $request){
-
-    }*/
 
     /**
      * @return \Illuminate\View\View
      */
-    public function getCreate(){
+    public function getCreate() {
         return view('admin.tasks.create');
     }
 
@@ -64,15 +69,17 @@ class TasksController extends Controller {
      * @param Requests\FormTasksRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postCreate(Requests\FormTasksRequest $request){
-        if($this->task->save($request)) {
-            \Session::flash('statusAction' , 'success');
+    public function postCreate(Requests\FormTasksRequest $request) {
+        if ($this->task->save($request)) {
+            \Session::flash('statusAction', 'success');
             \Session::flash('messageAction', 'Create successfully');
+
             return redirect('/admin/tasks');
         }
 
-        \Session::flash('statusAction' , 'danger');
+        \Session::flash('statusAction', 'danger');
         \Session::flash('messageAction', 'Create failed');
+
         return redirect()->back();
     }
 
@@ -80,9 +87,9 @@ class TasksController extends Controller {
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function getEdit($id){
+    public function getEdit($id) {
         $task = $this->task->getByID($id);
-        if(\Auth::user()->id == $task->user->id || \Auth::user()->role == 'manage')
+        if (\Auth::user()->id == $task->user->id || \Auth::user()->role == 'manage')
             return view('admin.tasks.edit', compact('task'));
         return redirect('/admin/tasks');
     }
@@ -91,14 +98,14 @@ class TasksController extends Controller {
      * @param Requests\FormTasksRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postEdit(Requests\FormTasksRequest $request){
-        if($this->task->save($request)) {
-            \Session::flash('statusAction' , 'success');
+    public function postEdit(Requests\FormTasksRequest $request) {
+        if ($this->task->save($request)) {
+            \Session::flash('statusAction', 'success');
             \Session::flash('messageAction', 'Edit successfully');
             return redirect('/admin/tasks');
         }
 
-        \Session::flash('statusAction' , 'danger');
+        \Session::flash('statusAction', 'danger');
         \Session::flash('messageAction', 'Edit failed');
         return redirect()->back();
     }
@@ -107,13 +114,13 @@ class TasksController extends Controller {
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete($id){
-
+    public function delete($id) {
         $task = $this->task->getByID($id);
 
-        if($task->user->id == \Auth::user()->id){
-            if($this->task->delete($id)) {
-                \Session::flash('statusAction' , 'success');
+        if ($task->user->id == \Auth::user()->id) {
+
+            if ($this->task->delete($id)) {
+                \Session::flash('statusAction', 'success');
                 \Session::flash('messageAction', 'Delete successfully');
                 return redirect('/admin/tasks');
             }

@@ -18,50 +18,50 @@ class CommentProjectsController extends Controller {
      */
     private $project;
 
-    public function __construct(CommentProjectInterface $commentproject, ProjectInterface $project){
+    public function __construct(CommentProjectInterface $commentproject, ProjectInterface $project) {
 
         $this->commentproject = $commentproject;
         $this->project = $project;
     }
 
-    public function create(Requests\FormCommentProjectsRequest $request){
+    public function create(Requests\FormCommentProjectsRequest $request) {
 
-       $project = $this->project->getByID($request->get('project_id'));
+        $project = $this->project->getByID($request->get('project_id'));
 
-        foreach($project->users as $user) {
-            if($user->id == \Auth::user()->id) {
+        foreach ($project->users as $user) {
+            if ($user->id == \Auth::user()->id) {
                 $this->commentproject->save($request, $user->id);
 
-                return redirect('/admin/projects/detail/'.$request->get('project_id'));
+                return redirect('/admin/projects/detail/' . $request->get('project_id'));
             }
         }
 
         return redirect()->back();
 
-	}
+    }
 
     /**
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete($id){
+    public function delete($id) {
         $commentproject = $this->commentproject->getByID($id);
-        if($commentproject->user->id == \Auth::user()->id) {
-            if($this->commentproject->delete($id)) {
-                return redirect('/admin/projects/detail/'.\Session::get('project_id'));
+        if ($commentproject->user->id == \Auth::user()->id) {
+            if ($this->commentproject->delete($id)) {
+                return redirect('/admin/projects/detail/' . \Session::get('project_id'));
             }
 
-            return redirect('/admin/projects/detail/'.\Session::get('project_id'));
+            return redirect('/admin/projects/detail/' . \Session::get('project_id'));
         }
 
-        return redirect('/admin/projects/detail/'.\Session::get('project_id'));
+        return redirect('/admin/projects/detail/' . \Session::get('project_id'));
     }
 
     /**
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit($id){
+    public function edit($id) {
         $commentproject = $this->commentproject->getByID($id);
         return \Response::json(view('admin.commentprojects.edit', compact('commentproject'))->render());
     }
@@ -70,9 +70,9 @@ class CommentProjectsController extends Controller {
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postEdit(Request $request){
+    public function postEdit(Request $request) {
         $this->commentproject->save($request, \Auth::user()->id);
-        return redirect('/admin/projects/detail/'.$request->get('project_id'));
+        return redirect('/admin/projects/detail/' . $request->get('project_id'));
     }
 
 }

@@ -9,17 +9,16 @@
 
     Project:{!! Form::select('project_id', $projects, $task->project->id , ['class' => 'form-control']) !!}
     <h5>Comment:</h5>
+
     <ul>
+    @foreach($comments as $comment)
+            <li>{{$comment->name}}: <span>{{($comment->body)}}</span>
+                @if($comment->user_id == Auth::user()->id)
 
-    @foreach($task->comments as $comments)
-
-            <li>{{$comments->user->name}}: <span>{{($comments->body)}}</span>
-                @if($comments->user->id == Auth::user()->id)
-
-                    <a href="{{URL::to('/admin/comments/edit/'.$comments->id)}}" class="editComment">Edit</a> |
-                    <a href="{{URL::to('/admin/comments/delete/'.$comments->id)}}">Delete</a>
+                    <a href="{{URL::to('/admin/comments/edit/'.$comment->id)}}" class="editComment">Edit</a> |
+                    <a href="{{URL::to('/admin/comments/delete/'.$comment->id)}}">Delete</a>
                 @endif
-                <div id="text{{$comments->id}}" class="edit-comment"></div>
+                <div id="text{{$comment->id}}" class="edit-comment"></div>
             </li>
 
     @endforeach

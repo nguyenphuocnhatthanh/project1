@@ -12,15 +12,14 @@ namespace App\Impl\User;
 use App\Impl\AbstractRepository;
 use App\User;
 
-class UserEloquent extends AbstractRepository implements UserInterface{
+class UserEloquent extends AbstractRepository implements UserInterface {
 
     /**
      * @var User
      */
     protected $model;
 
-    function __construct(User $model)
-    {
+    function __construct(User $model) {
         $this->model = $model;
     }
 
@@ -28,11 +27,10 @@ class UserEloquent extends AbstractRepository implements UserInterface{
      * @param $request
      * @return mixed
      */
-    public function save($request)
-    {
-        if($request->has('id')) {
+    public function save($request) {
+        if ($request->has('id')) {
             $user = $this->getByID($request->get('id'));
-        }else {
+        } else {
             $user = new $this->model;
         }
 
@@ -50,8 +48,7 @@ class UserEloquent extends AbstractRepository implements UserInterface{
      * @param int $adj
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function search($search, $adj)
-    {
-        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->paginate($adj);
+    public function search($search, $adj) {
+        return $this->model->query()->where('name', 'LIKE', '%' . $search . '%')->paginate($adj);
     }
 }

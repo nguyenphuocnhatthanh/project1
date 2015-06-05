@@ -11,7 +11,7 @@ namespace App\Impl\Project;
 
 use App\Impl\Repository;
 
-interface ProjectInterface extends Repository{
+interface ProjectInterface extends Repository {
     /**
      * @param $request
      * @return mixed

@@ -7,21 +7,21 @@ class Project extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users(){
+    public function users() {
         return $this->belongsToMany('App\User', 'project_user', 'project_id', 'user_id');
-	}
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function commentprojects(){
-        return $this->hasMany('App\Commentproject');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tasks(){
+    /*public function commentprojects() {
+        return $this->hasMany('App\Commentproject');
+    }*/
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks() {
         return $this->hasMany('App\Task');
     }
 
@@ -29,9 +29,9 @@ class Project extends Model {
      * @param $project
      * @return array
      */
-    public static function getUserIdToProject($project){
+    public static function getUserIdToProject($project) {
         $userIDs = [];
-        foreach($project->users as $user)
+        foreach ($project->users as $user)
             $userIDs [] = $user->id;
         return $userIDs;
     }

@@ -79,14 +79,32 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     post('commentprojects/create', 'CommentProjectsController@create');
     post('commentprojects/edit/{id}', 'CommentProjectsController@postEdit');
+
+    /**
+     * Route Module
+     */
 });
 
 
 
 get('test', function(){
-    $array = ['foo', 'aa','test'];
-    list($key, $value) = $array;
-    dd($key, $value);
+    $redis = Redis::connection();
+    //dd($redis);
+    $redis->set('key', 'aaaa');
+//    dd($redis);
+});
+
+get('mail/queue', function(){
+    try{
+        Mail::later(5, 'emails.queue_email', ['name' => 'John'], function($message) {
+            $message->to('nguyenphuocnhatthanh@gmail.com', 'John')->subject('Test Queue Mail');
+        });
+
+        return 'Sent mail';
+    }catch (Exception $e){
+        return $e->getMessage();
+    }
+
 });
 
 

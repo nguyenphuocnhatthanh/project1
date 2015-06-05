@@ -22,8 +22,7 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
      */
     protected $model;
 
-    function __construct(Project $model)
-    {
+    function __construct(Project $model) {
         $this->model = $model;
     }
 
@@ -31,10 +30,10 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
      * @param $request
      * @return mixed
      */
-    public function save($request){
-        if($request->has('id')) {
+    public function save($request) {
+        if ($request->has('id')) {
             $project = $this->getByID($request->get('id'));
-        }else{
+        } else {
             $project = new $this->model;
         }
 
@@ -52,8 +51,7 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
      * @param array $params
      * @return mixed
      */
-    public function paginate($adj, array $params = [])
-    {
+    public function paginate($adj, array $params = []) {
         return $this->make(['users', 'tasks'])->paginate($adj);
     }
 
@@ -62,26 +60,24 @@ class ProjectEloquent extends AbstractRepository implements ProjectInterface {
      * @param int $adj
      * @return mixed
      */
-    public function search($search, $adj = 10)
-    {
-        return $this->model->query()->where('name', 'LIKE', '%'.$search.'%')->with(['users', 'tasks'])->paginate($adj);
+    public function search($search, $adj = 10) {
+        return $this->model->query()->where('name', 'LIKE', '%' . $search . '%')->with(['users', 'tasks'])->paginate($adj);
     }
 
     /**
      * @param $id
      * @return mixed
      */
-    public function delete($id )
-    {
+    public function delete($id) {
         $project = $this->getByID($id);
-
-        $commentprojects = $project->commentprojects;
         $tasks = $project->tasks;
-        $taskComments = $project->tasks()->with(['comments'])->get();
+        /* $commentprojects = $project->commentprojects;
+
+         $taskComments = $project->tasks()->with(['comments'])->get();*/
         $bool = parent::delete($id);
         $project->users()->detach();
 
-        if($bool) event(new DeletingDataMapProject($commentprojects, $tasks, $taskComments));
+        if ($bool) event(new DeletingDataMapProject($id, $tasks));
 
         return $bool;
     }

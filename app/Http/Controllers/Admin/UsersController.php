@@ -14,7 +14,7 @@ class UsersController extends Controller {
      */
     private $user;
 
-    public function __construct(UserInterface $user){
+    public function __construct(UserInterface $user) {
 
         $this->user = $user;
     }
@@ -22,21 +22,21 @@ class UsersController extends Controller {
     /**
      * @return \Illuminate\View\View
      */
-    public function index(Request $request){
-        if($request->has('search'))
+    public function index(Request $request) {
+        if ($request->has('search'))
             $users = $this->user->search($request->get('search'), 10);
         else $users = $this->user->paginate(10);
 
         $users->setPath('/public/admin/users');
         $users->appends($request->query());
-        
+
         return view('admin.users.index', compact('users'));
     }
 
     /**
      * @return \Illuminate\View\View
      */
-    public function getCreate(){
+    public function getCreate() {
         return view('admin.users.create');
     }
 
@@ -44,14 +44,14 @@ class UsersController extends Controller {
      * @param Requests\FormUsersRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postCreate(Requests\FormUsersRequest $request){
-        if($this->user->save($request)) {
-            \Session::flash('statusAction' , 'success');
+    public function postCreate(Requests\FormUsersRequest $request) {
+        if ($this->user->save($request)) {
+            \Session::flash('statusAction', 'success');
             \Session::flash('messageAction', 'Create successfully');
             return redirect('/admin/users');
         }
 
-        \Session::flash('statusAction' , 'danger');
+        \Session::flash('statusAction', 'danger');
         \Session::flash('messageAction', 'Create failed');
         return redirect()->back();
     }
@@ -60,7 +60,7 @@ class UsersController extends Controller {
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function getEdit($id){
+    public function getEdit($id) {
         $user = $this->user->getByID($id);
 
         return view('admin.users.edit', compact('user'));
@@ -70,14 +70,14 @@ class UsersController extends Controller {
      * @param Requests\FormUsersRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postEdit(Requests\FormUsersRequest $request){
-        if($this->user->save($request)) {
-            \Session::flash('statusAction' , 'success');
+    public function postEdit(Requests\FormUsersRequest $request) {
+        if ($this->user->save($request)) {
+            \Session::flash('statusAction', 'success');
             \Session::flash('messageAction', 'Edit successfully');
             return redirect('/admin/users');
         }
 
-        \Session::flash('statusAction' , 'danger');
+        \Session::flash('statusAction', 'danger');
         \Session::flash('messageAction', 'Edit failed');
         return redirect()->back();
     }
@@ -86,14 +86,14 @@ class UsersController extends Controller {
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete($id){
-        if($this->user->delete($id)){
-            \Session::flash('statusAction' , 'success');
+    public function delete($id) {
+        if ($this->user->delete($id)) {
+            \Session::flash('statusAction', 'success');
             \Session::flash('messageAction', 'Delete successfully');
             return redirect('/admin/users');
         }
 
-        \Session::flash('statusAction' , 'danger');
+        \Session::flash('statusAction', 'danger');
         \Session::flash('messageAction', 'Delete failed');
         return redirect()->back();
 

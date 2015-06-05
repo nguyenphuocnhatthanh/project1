@@ -4,12 +4,14 @@ use App\Comment;
 use App\Commentproject;
 use App\Events\Event;
 
+use App\Impl\Comment\CommentInterface;
+use App\Impl\Task\TaskInterface;
 use App\Task;
 use Illuminate\Queue\SerializesModels;
 
 class DeletingDataMapProject extends Event {
 
-	use SerializesModels;
+    use SerializesModels;
     /**
      * @var array
      */
@@ -21,47 +23,51 @@ class DeletingDataMapProject extends Event {
     /**
      * @var
      */
-    private $taskComments;
+    private $recordID;
 
     /**
      * Create a new event instance.
      *
-     * @param array $comments
      * @param $tasks
      * @param $taskComments
      */
-	public function __construct($commentprojects = [], $tasks, $taskComments)
-	{
-		//
-        $this->commentprojects = $commentprojects;
+    public function __construct($recordID, $tasks) {
+        //
         $this->tasks = $tasks;
-        $this->taskComments = $taskComments;
+        $this->recordID = $recordID;
     }
 
     /**
      *Delete data map project
      */
-    public function deleteDataMapProject(){
-        $CommentProjectids = [];
-        $tasksIds =[];
-        $commentIds = [];
-        foreach($this->commentprojects as $commentproject) {
-            $CommentProjectids[] = $commentproject->id;
-        }
+    public function deleteDataMapProject(CommentInterface $commentInterface, TaskInterface $taskInterface) {
+        $commentIDs = [];
+        $tasksIds = [];
+        $moduleIDs = [1];
 
-        foreach($this->tasks as $task){
+
+        foreach ($this->tasks as $task) {
             $tasksIds[] = $task->id;
+            $moduleIDs[2][] = $task->id;
         }
 
-        foreach($this->taskComments as $taskComments){
-            foreach($taskComments->comments as $comment) {
-                $commentIds[] = $comment->id;
-            }
+        foreach ($commentInterface->allCommentToMultiModule($moduleIDs) as $comment) {
+            $commentIDs[] = $comment->id;
         }
 
-        Commentproject::query()->whereIn('id', $CommentProjectids)->delete();
+        $commentInterface->deleteMultiComment($commentIDs);
+        $taskInterface->deleteMultiRecord($tasksIds);
+
+        /* \Event::listen('illuminate.query', function($query)
+         {
+             var_dump($query);
+         });*/
+        //  dd($commentInterface->allCommentToMultiModule($moduleID));
+
+
+        /*Commentproject::query()->whereIn('id', $CommentProjectids)->delete();
         Comment::query()->whereIn('id', $commentIds)->delete();
-        Task::query()->whereIn('id', $tasksIds)->delete();
+        Task::query()->whereIn('id', $tasksIds)->delete();*/
 
     }
 

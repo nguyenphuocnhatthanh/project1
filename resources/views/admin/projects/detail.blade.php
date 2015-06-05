@@ -14,17 +14,18 @@
     <h5>Comment:</h5>
     <ul>
     <?php $checkDisplayComment = false; ?>
-    @foreach($project->commentprojects as $commentprojects)
 
-            <li>{{$commentprojects->user->name}}: <span>{{($commentprojects->content)}}</span>
+    @foreach($comments as $comment)
 
-                @if($commentprojects->user->id == Auth::user()->id)
+            <li>{{$comment->name}}: <span>{{($comment->body)}}</span>
+
+                @if($comment->user_id == Auth::user()->id)
                     <?php $checkDisplayComment = true; ?>
-                    <a href="{{URL::to('/admin/commentprojects/edit/'.$commentprojects->id)}}" class="editComment">Edit</a> |
-                    <a href="{{URL::to('/admin/commentprojects/delete/'.$commentprojects->id)}}">Delete</a>
+                    <a href="{{URL::to('/admin/comments/edit/'.$comment->id)}}" class="editComment">Edit</a> |
+                    <a href="{{URL::to('/admin/comments/delete/'.$comment->id)}}">Delete</a>
                 @endif
 
-                <div id="text{{$commentprojects->id}}" class="edit-comment"></div>
+                <div id="text{{$comment->id}}" class="edit-comment"></div>
 
             </li>
 
@@ -37,11 +38,11 @@
         @endif
     @endforeach
     @if($checkDisplayComment)
-    <form action="{{URL::to('/admin/commentprojects/create')}}" method="post">
+    <form action="{{URL::to('/admin/comments/create')}}" method="post">
         @include('partials.error')
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <input type="hidden" name="project_id" value="{{$project->id}}"/>
-        Comment: <textarea class="form-control" name="content" id="" cols="60" rows="5"></textarea>
+        Comment: <textarea class="form-control" name="body" id="" cols="60" rows="5"></textarea>
         <button type="submit" class="btn btn-default">Send</button>
     </form>
     @endif

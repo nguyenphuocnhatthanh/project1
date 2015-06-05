@@ -3,36 +3,36 @@
 use App\Comment;
 use App\Events\Event;
 
+use App\Impl\Comment\CommentInterface;
 use Illuminate\Queue\SerializesModels;
 
 class DeleteCommentsToDeleteTask extends Event {
 
-	use SerializesModels;
+    use SerializesModels;
+
     /**
-     * @var Comment
+     * @var
      */
-    private $comments;
+    private $recordID;
 
 
     /**
-	 * Create a new event instance.
-	 *
-	 * @return void
-	 */
-	public function __construct($comments)
-	{
-		//
-        $this->comments = $comments;
+     * Create a new event instance.
+     *
+     * @param $comments
+     * @param $recordID
+     */
+    public function __construct($recordID) {
+        $this->recordID = $recordID;
     }
 
-    public function deletingComment()
-    {
+    public function deletingComment(CommentInterface $comments) {
         $ids = [];
-        foreach($this->comments as $comment){
+        foreach ($comments->allCommnentToModule(2, $this->recordID) as $comment) {
             $ids[] = $comment->id;
         }
 
-        Comment::query()->whereIn('id', $ids)->delete();
+        return $comments->deleteMultiComment($ids, 2, $this->recordID);
     }
 
 }

@@ -29,7 +29,9 @@ class EventServiceProvider extends ServiceProvider {
 	{
 		parent::boot($events);
 
-		//\Event::listen()
+		/*\Event::listen('App\Events\DeleteCommentsToDeleteTask', function($event){
+            dd($event, 'abcde');
+        });*/
 	}
 
 }

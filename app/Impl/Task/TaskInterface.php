@@ -1,4 +1,5 @@
 <?php namespace App\Impl\Task;
+
 use App\Impl\Repository;
 
 /**
@@ -7,8 +8,7 @@ use App\Impl\Repository;
  * Date: 6/2/2015
  * Time: 2:19 PM
  */
-
-interface TaskInterface extends Repository{
+interface TaskInterface extends Repository {
     /**
      * @param $request
      * @return mixed
@@ -21,4 +21,10 @@ interface TaskInterface extends Repository{
      * @return mixed
      */
     public function search($search, $adj = 10);
+
+    /**
+     * @param $ids
+     * @return mixed
+     */
+    public function deleteMultiRecord($ids);
 }

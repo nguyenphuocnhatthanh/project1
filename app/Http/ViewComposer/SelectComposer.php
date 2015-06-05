@@ -23,12 +23,12 @@ class SelectComposer {
      */
     private $project;
 
-    public function __construct(User $user, Project $project){
+    public function __construct(User $user, Project $project) {
         $this->user = $user;
         $this->project = $project;
     }
 
-    public function compose(View $view){
+    public function compose(View $view) {
         $view->with('role', $this->role);
         $view->with('users', $this->user->all()->lists('name', 'id'));
         $view->with('projects', $this->project->all()->lists('name', 'id'));

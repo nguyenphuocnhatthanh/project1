@@ -11,7 +11,7 @@ namespace App\Impl\User;
 
 use App\Impl\Repository;
 
-interface UserInterface extends Repository{
+interface UserInterface extends Repository {
     /**
      * @param $request
      * @return mixed
